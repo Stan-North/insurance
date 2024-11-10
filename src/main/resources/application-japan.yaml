@@ -1,0 +1,5 @@
+app:
+  currency: yen
+  country: Japan
+  health-coefficient: 0.015
+  robbery-coefficient: 0.01

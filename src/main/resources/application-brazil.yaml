@@ -1,0 +1,5 @@
+app:
+  currency: real
+  country: Brazil
+  health-coefficient: 0.05
+  robbery-coefficient: 0.03
