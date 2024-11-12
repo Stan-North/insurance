@@ -1,16 +1,18 @@
 package com.javaacademy.insurance;
 
-import lombok.Getter;
 import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
+import java.util.TreeMap;
 
 @Component
-@Getter
 public class Archive {
-    private final HashMap<String, InsuranceContract> contracts = new HashMap<>();
+    private final TreeMap<String, InsuranceContract> contracts = new TreeMap<>();
 
-    public void addContract(String contractNumber, InsuranceContract insuranceContract) {
-        contracts.put(contractNumber, insuranceContract);
+    public void addContract(InsuranceContract insuranceContract) {
+        contracts.put(insuranceContract.getContractNumber(), insuranceContract);
+    }
+
+    public InsuranceContract getContract(String contractNumber) {
+        return contracts.get(contractNumber);
     }
 }
