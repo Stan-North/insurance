@@ -9,6 +9,5 @@ public enum InsuranceType {
     HEALTH_INSURANCE("медицинское страхование"),
     ROBBERY_INSURANCE("защита от грабежа");
 
-    //медицинское страхование или защита от грабежа
     private final String description;
 }

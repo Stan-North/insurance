@@ -8,16 +8,15 @@ import java.math.BigDecimal;
 @Getter
 public class InsuranceContract {
 
-    private String contractNumber;
-    private BigDecimal insurancePrice;
-    private BigDecimal coverageCost;
-    private String currency;
-    private String clientFullName;
-    private String country;
-    private InsuranceType insuranceType;
+    private final String contractNumber;
+    private final BigDecimal insurancePrice;
+    private final BigDecimal coverageCost;
+    private final String currency;
+    private final String clientFullName;
+    private final String country;
+    private final InsuranceType insuranceType;
     @Setter
     private ContractStatus contractStatus;
-
 
     public InsuranceContract(String contractNumber, BigDecimal insurancePrice, BigDecimal coverageCost,
                              String currency, String clientFullName, String country,

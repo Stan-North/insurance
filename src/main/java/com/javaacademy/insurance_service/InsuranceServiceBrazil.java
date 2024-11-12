@@ -23,7 +23,7 @@ public class InsuranceServiceBrazil implements InsuranceService {
     private InsuranceCalcBrazilService insuranceCalcBrazilService;
 
     public InsuranceServiceBrazil(Archive archive,
-            @Qualifier("insuranceCalcBrazilService") InsuranceCalcBrazilService insuranceCalcBrazilService) {
+             InsuranceCalcBrazilService insuranceCalcBrazilService) {
         this.archive = archive;
         this.insuranceCalcBrazilService = insuranceCalcBrazilService;
     }

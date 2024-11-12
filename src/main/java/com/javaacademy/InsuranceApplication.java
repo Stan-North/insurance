@@ -19,18 +19,13 @@ public class InsuranceApplication {
 				"Иванов Иван Иванович",
 				InsuranceType.HEALTH_INSURANCE);
 		insuranceService.payInsurance(insuranceContract.getContractNumber());
-		System.out.println("стоимость:" + insuranceContract.getInsurancePrice());
-		System.out.println("номер:" + insuranceContract.getContractNumber());
-		System.out.println("тип:" + insuranceContract.getInsuranceType());
-		System.out.println("статус:" + insuranceContract.getContractStatus());
-		System.out.println("страна:" + insuranceContract.getCountry());
-		System.out.println("клиент:" + insuranceContract.getClientFullName());
-		System.out.println("стоимость покрытия:" + insuranceContract.getCoverageCost());
-		System.out.println("валюта:" + insuranceContract.getCurrency());
+		System.out.println("стоимость: " + insuranceContract.getInsurancePrice());
+		System.out.println("номер: " + insuranceContract.getContractNumber());
+		System.out.println("тип: " + insuranceContract.getInsuranceType());
+		System.out.println("статус: " + insuranceContract.getContractStatus());
+		System.out.println("страна: " + insuranceContract.getCountry());
+		System.out.println("клиент: " + insuranceContract.getClientFullName());
+		System.out.println("стоимость покрытия: " + insuranceContract.getCoverageCost());
+		System.out.println("валюта: " + insuranceContract.getCurrency());
 	}
-
-	//1800
-	//10800
-	//Ситуация №1: Рассчитать стоимость страховки при грабеже, сумма покрытия 50 000. Ожидаемая стоимость: 2800.
-	//    Ситуация №2: Рассчитать стоимость страховки при мед страховке, сумма покрытия 200 000. Ожидаемая стоимость: 6800.
 }
