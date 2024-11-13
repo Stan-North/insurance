@@ -4,7 +4,6 @@ import com.javaacademy.calc_service.InsuranceCalcJapanService;
 import com.javaacademy.exception.ContractException;
 import com.javaacademy.insurance.*;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
@@ -30,10 +29,16 @@ public class InsuranceServiceJapan implements InsuranceService {
 
     @Override
     public InsuranceContract giveInsuranceOffer(BigDecimal coverageCost, String clientFullName, InsuranceType insuranceType) {
-        String contractNumber = contractNumberGenerator.generateNumber();
-        BigDecimal insurancePrice = insuranceCalcJapanService.calcInsuranceCost(coverageCost, insuranceType);
-        InsuranceContract insuranceContract = new InsuranceContract(contractNumber, insurancePrice, coverageCost,
-                currency, clientFullName, country, insuranceType, ContractStatus.UNPAID);
+        InsuranceContract insuranceContract = new InsuranceContract(
+                contractNumberGenerator.generateNumber(),
+                insuranceCalcJapanService.calcInsuranceCost(coverageCost, insuranceType),
+                coverageCost,
+                currency,
+                clientFullName,
+                country,
+                insuranceType,
+                ContractStatus.UNPAID);
+
         archive.addContract(insuranceContract);
         return insuranceContract;
     }

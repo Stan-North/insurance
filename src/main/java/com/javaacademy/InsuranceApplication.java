@@ -19,13 +19,5 @@ public class InsuranceApplication {
 				"Иванов Иван Иванович",
 				InsuranceType.HEALTH_INSURANCE);
 		insuranceService.payInsurance(insuranceContract.getContractNumber());
-		System.out.println("стоимость: " + insuranceContract.getInsurancePrice());
-		System.out.println("номер: " + insuranceContract.getContractNumber());
-		System.out.println("тип: " + insuranceContract.getInsuranceType());
-		System.out.println("статус: " + insuranceContract.getContractStatus());
-		System.out.println("страна: " + insuranceContract.getCountry());
-		System.out.println("клиент: " + insuranceContract.getClientFullName());
-		System.out.println("стоимость покрытия: " + insuranceContract.getCoverageCost());
-		System.out.println("валюта: " + insuranceContract.getCurrency());
 	}
 }
