@@ -58,7 +58,11 @@ public class InsuranceServiceJapanTest {
                 "Иванов Иван Иванович",
                 InsuranceType.ROBBERY_INSURANCE);
 
-        assertEquals("001", result.getContractNumber());
+        Mockito.when(archive.getContract("001")).thenReturn(result);
+
+        String expectedContractNumber = "001";
+
+        assertEquals(expectedContractNumber, archive.getContract("001").getContractNumber());
         assertEquals(valueOf(162_000), result.getInsurancePrice().setScale(0, ROUND_DOWN));
         assertEquals(valueOf(1_000_000), result.getCoverageCost().setScale(0, ROUND_DOWN));
         assertEquals("yen", result.getCurrency());
@@ -76,8 +80,7 @@ public class InsuranceServiceJapanTest {
                 "yen",
                 "Иванов Иван Иванович",
                 "Japan",
-                InsuranceType.HEALTH_INSURANCE,
-                ContractStatus.UNPAID);
+                InsuranceType.HEALTH_INSURANCE);
         Mockito.when(archive.getContract("001")).thenReturn(insuranceContract);
         Mockito.when(calculator.calcInsuranceCost(Mockito.any(), Mockito.any()))
                 .thenReturn(valueOf(162_000).setScale(0,RoundingMode.DOWN));

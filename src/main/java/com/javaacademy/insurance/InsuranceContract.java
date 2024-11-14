@@ -20,7 +20,7 @@ public class InsuranceContract {
 
     public InsuranceContract(String contractNumber, BigDecimal insurancePrice, BigDecimal coverageCost,
                              String currency, String clientFullName, String country,
-                             InsuranceType insuranceType, ContractStatus contractStatus) {
+                             InsuranceType insuranceType) {
         this.contractNumber = contractNumber;
         this.insurancePrice = insurancePrice;
         this.coverageCost = coverageCost;
@@ -28,6 +28,6 @@ public class InsuranceContract {
         this.clientFullName = clientFullName;
         this.country = country;
         this.insuranceType = insuranceType;
-        this.contractStatus = contractStatus;
+        this.contractStatus = ContractStatus.UNPAID;
     }
 }

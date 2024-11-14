@@ -8,6 +8,7 @@ import java.util.Random;
 public class ContractNumberGenerator {
     private static final int COUNTER_OF_DIGIT = 4;
     private static final String DELIMITER = "-";
+    public static final int BOUND = 10;
 
     public String generateNumber() {
         Random random = new Random();
@@ -18,11 +19,11 @@ public class ContractNumberGenerator {
         }
         builder.append(DELIMITER);
         for (int i = 0; i < COUNTER_OF_DIGIT; i++) {
-            builder.append(random.nextInt(10));
+            builder.append(random.nextInt(BOUND));
         }
         builder.append(DELIMITER);
         for (int i = 0; i < COUNTER_OF_DIGIT; i++) {
-            builder.append(random.nextInt(10));
+            builder.append(random.nextInt(BOUND));
         }
         return builder.toString();
     }

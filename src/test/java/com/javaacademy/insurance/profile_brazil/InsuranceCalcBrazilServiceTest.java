@@ -18,8 +18,6 @@ public class InsuranceCalcBrazilServiceTest {
     @Autowired
     InsuranceCalcBrazilService insuranceCalcBrazilService;
 
-    //Ситуация №1: Рассчитать стоимость страховки при грабеже, сумма покрытия 50 000. Ожидаемая стоимость: 2800.
-    //    Ситуация №2: Рассчитать стоимость страховки при мед страховке, сумма покрытия 200 000. Ожидаемая стоимость: 6800.
     @Test
     public void robberyCalcSuccess() {
         BigDecimal result = insuranceCalcBrazilService.calcInsuranceCost(valueOf(50_000),

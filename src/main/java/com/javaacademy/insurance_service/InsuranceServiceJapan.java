@@ -2,7 +2,11 @@ package com.javaacademy.insurance_service;
 
 import com.javaacademy.calc_service.InsuranceCalcJapanService;
 import com.javaacademy.exception.ContractException;
-import com.javaacademy.insurance.*;
+import com.javaacademy.insurance.Archive;
+import com.javaacademy.insurance.ContractNumberGenerator;
+import com.javaacademy.insurance.InsuranceType;
+import com.javaacademy.insurance.InsuranceContract;
+import com.javaacademy.insurance.ContractStatus;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
@@ -28,7 +32,8 @@ public class InsuranceServiceJapan implements InsuranceService {
 
 
     @Override
-    public InsuranceContract giveInsuranceOffer(BigDecimal coverageCost, String clientFullName, InsuranceType insuranceType) {
+    public InsuranceContract giveInsuranceOffer(BigDecimal coverageCost, String clientFullName,
+                                                InsuranceType insuranceType) {
         InsuranceContract insuranceContract = new InsuranceContract(
                 contractNumberGenerator.generateNumber(),
                 insuranceCalcJapanService.calcInsuranceCost(coverageCost, insuranceType),
@@ -36,9 +41,7 @@ public class InsuranceServiceJapan implements InsuranceService {
                 currency,
                 clientFullName,
                 country,
-                insuranceType,
-                ContractStatus.UNPAID);
-
+                insuranceType);
         archive.addContract(insuranceContract);
         return insuranceContract;
     }
